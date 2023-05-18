@@ -141,10 +141,6 @@ body {
   letter-spacing: 0.04em;
   text-align: center;
   cursor: pointer;
-
-  transition: color var(--transition-duration-function),
-    background-color var(--transition-duration-function),
-    box-shadow var(--transition-duration-function), border var(--transition-duration-function); /*border??*/
 }
 
 /* Hero Button */
@@ -161,6 +157,9 @@ body {
 
   color: var(--primary-white-color);
   background-color: var(--light-accent-color);
+
+  transition: color var(--transition-duration-function),
+    background-color var(--transition-duration-function);
 }
 
 /* Other Buttons */
@@ -170,6 +169,10 @@ body {
 
   color: var(--light-accent-color);
   background-color: var(--light-mode-color);
+
+  transition: color var(--transition-duration-function),
+    background-color var(--transition-duration-function),
+    box-shadow var(--transition-duration-function), border-color var(--transition-duration-function);
 }
 
 .button:hover,
@@ -285,7 +288,7 @@ OR
 
 .site-nav-link.current::after {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
 
   content: '';
   display: block;
@@ -521,8 +524,8 @@ OR
 
   color: var(--customers-logo-light-color);
 
-  transition: color var(--transition-duration-function),
-    border-color var(--transition-duration-function);
+  transition: border-color var(--transition-duration-function),
+    color var(--transition-duration-function);
 }
 
 .customers-link:hover,
@@ -617,12 +620,14 @@ OR
   transform: translate(-50%, -50%);
 
   width: 408px;
-  height: 584px;
+  min-height: 576px; /* figma - 584?? https://prnt.sc/bK-KHF_XQjuh*/
 
   background-color: var(--modal-bgc);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  transition: transform var(--transition-duration-function);
 }
 
 .modal-close-btn {
@@ -638,9 +643,30 @@ OR
   width: 24px;
   height: 24px;
 
+  cursor: pointer;
+
   background-color: var(--subtle-bgc-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+
+  transition: background-color var(--transition-duration-function),
+    border var(--transition-duration-function);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.icon-modal-close {
+  fill: var(--primary-dark-color);
+  transition: fill var(--transition-duration-function);
+}
+
+.modal-close-btn:hover .icon-modal-close,
+.modal-close-btn:focus .icon-modal-close {
+  fill: var(--primary-white-color);
 }
 
 .is-hidden {
