@@ -158,8 +158,8 @@ body {
   color: var(--primary-white-color);
   background-color: var(--light-accent-color);
 
-  transition: color var(--transition-duration-function),
-    background-color var(--transition-duration-function);
+  transition: background-color var(--transition-duration-function);
+  /* color var(--transition-duration-function), */
 }
 
 /* Other Buttons */
